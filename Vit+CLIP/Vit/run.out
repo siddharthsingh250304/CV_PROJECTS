@@ -1,0 +1,989 @@
+==========================================
+SLURM_JOB_ID = 2415457
+SLURM_NODELIST = gnode016
+SLURM_JOB_GPUS = 0
+==========================================
+job started at Sun Apr 20 23:05:44 IST 2025
+Running Python script: train.py
+Using device: cuda
+
+=== Starting ViT Sequential Tuning (2025-04-20 23:05:50) ===
+
+=============== Stage 1: Patch Size Tuning (20 Epochs) ===============
+
+--- Testing Stage1_Patch_4 ---
+
+--- Running Config: Stage1_Patch_4 ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 192,
+  "depth": 6,
+  "num_heads": 6,
+  "mlp_ratio": 4.0,
+  "batch_size": 128,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 8
+}
+Data Augmentations: None
+Positional Embedding: 1d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 1D learned positional embedding.
+Model created with 2693578 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=1755, Decay=5265, Total=7020
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 2.0061, Acc: 0.2567 | Val Loss: 1.8283, Acc: 0.3138 | LR: 1.0e-04
+✨ New best val acc: 0.3138 at epoch 1
+Epoch 2/20 - Train Loss: 1.7291, Acc: 0.3676 | Val Loss: 1.6225, Acc: 0.4144 | LR: 2.0e-04
+✨ New best val acc: 0.4144 at epoch 2
+Epoch 3/20 - Train Loss: 1.5324, Acc: 0.4447 | Val Loss: 1.4295, Acc: 0.4764 | LR: 3.0e-04
+✨ New best val acc: 0.4764 at epoch 3
+Epoch 4/20 - Train Loss: 1.3658, Acc: 0.5075 | Val Loss: 1.2816, Acc: 0.5238 | LR: 4.0e-04
+✨ New best val acc: 0.5238 at epoch 4
+Epoch 5/20 - Train Loss: 1.2510, Acc: 0.5503 | Val Loss: 1.2463, Acc: 0.5406 | LR: 5.0e-04
+✨ New best val acc: 0.5406 at epoch 5
+Epoch 6/20 - Train Loss: 1.1677, Acc: 0.5777 | Val Loss: 1.1855, Acc: 0.5720 | LR: 4.9e-04
+✨ New best val acc: 0.5720 at epoch 6
+Epoch 7/20 - Train Loss: 1.0983, Acc: 0.6009 | Val Loss: 1.1010, Acc: 0.5966 | LR: 4.8e-04
+✨ New best val acc: 0.5966 at epoch 7
+Epoch 8/20 - Train Loss: 1.0314, Acc: 0.6273 | Val Loss: 1.0614, Acc: 0.6164 | LR: 4.5e-04
+✨ New best val acc: 0.6164 at epoch 8
+Epoch 9/20 - Train Loss: 0.9825, Acc: 0.6454 | Val Loss: 1.0157, Acc: 0.6278 | LR: 4.2e-04
+✨ New best val acc: 0.6278 at epoch 9
+Epoch 10/20 - Train Loss: 0.9208, Acc: 0.6720 | Val Loss: 1.0019, Acc: 0.6346 | LR: 3.8e-04
+✨ New best val acc: 0.6346 at epoch 10
+Epoch 11/20 - Train Loss: 0.8616, Acc: 0.6910 | Val Loss: 0.9445, Acc: 0.6608 | LR: 3.3e-04
+✨ New best val acc: 0.6608 at epoch 11
+Epoch 12/20 - Train Loss: 0.8084, Acc: 0.7104 | Val Loss: 0.9598, Acc: 0.6554 | LR: 2.8e-04
+Epoch 13/20 - Train Loss: 0.7531, Acc: 0.7295 | Val Loss: 0.9463, Acc: 0.6712 | LR: 2.2e-04
+✨ New best val acc: 0.6712 at epoch 13
+Epoch 14/20 - Train Loss: 0.6979, Acc: 0.7511 | Val Loss: 0.8819, Acc: 0.7002 | LR: 1.7e-04
+✨ New best val acc: 0.7002 at epoch 14
+Epoch 15/20 - Train Loss: 0.6428, Acc: 0.7713 | Val Loss: 0.8838, Acc: 0.7002 | LR: 1.3e-04
+Epoch 16/20 - Train Loss: 0.5851, Acc: 0.7914 | Val Loss: 0.8909, Acc: 0.7026 | LR: 8.4e-05
+✨ New best val acc: 0.7026 at epoch 16
+Epoch 17/20 - Train Loss: 0.5417, Acc: 0.8067 | Val Loss: 0.8876, Acc: 0.7084 | LR: 4.9e-05
+✨ New best val acc: 0.7084 at epoch 17
+Epoch 18/20 - Train Loss: 0.5075, Acc: 0.8198 | Val Loss: 0.9054, Acc: 0.7108 | LR: 2.3e-05
+✨ New best val acc: 0.7108 at epoch 18
+Epoch 19/20 - Train Loss: 0.4795, Acc: 0.8300 | Val Loss: 0.9023, Acc: 0.7134 | LR: 6.5e-06
+✨ New best val acc: 0.7134 at epoch 19
+Epoch 20/20 - Train Loss: 0.4682, Acc: 0.8351 | Val Loss: 0.9034, Acc: 0.7106 | LR: 1.0e-06
+Training finished in 7.14 min. Best Val Acc: 0.7134
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.7106
+Stage1_Patch_4: Best Val Acc = 0.7134, Final Test Acc = 0.7106
+*** New best for Stage 1: Stage1_Patch_4 (Val Acc: 0.7134) ***
+*** New Overall Best CONFIG Found! (From Stage1_Patch_4, Val Acc: 0.7134) ***
+
+--- Testing Stage1_Patch_8 ---
+
+--- Running Config: Stage1_Patch_8 ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 8,
+  "embed_dim": 192,
+  "depth": 6,
+  "num_heads": 6,
+  "mlp_ratio": 4.0,
+  "batch_size": 256,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 8
+}
+Data Augmentations: None
+Positional Embedding: 1d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 1D learned positional embedding.
+Model created with 2712010 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=875, Decay=2625, Total=3500
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 2.0282, Acc: 0.2545 | Val Loss: 1.8643, Acc: 0.3210 | LR: 1.0e-04
+✨ New best val acc: 0.3210 at epoch 1
+Epoch 2/20 - Train Loss: 1.8202, Acc: 0.3338 | Val Loss: 1.7142, Acc: 0.3820 | LR: 2.0e-04
+✨ New best val acc: 0.3820 at epoch 2
+Epoch 3/20 - Train Loss: 1.6662, Acc: 0.3931 | Val Loss: 1.5525, Acc: 0.4532 | LR: 3.0e-04
+✨ New best val acc: 0.4532 at epoch 3
+Epoch 4/20 - Train Loss: 1.5155, Acc: 0.4522 | Val Loss: 1.4347, Acc: 0.4870 | LR: 4.0e-04
+✨ New best val acc: 0.4870 at epoch 4
+Epoch 5/20 - Train Loss: 1.4176, Acc: 0.4872 | Val Loss: 1.4320, Acc: 0.4874 | LR: 5.0e-04
+✨ New best val acc: 0.4874 at epoch 5
+Epoch 6/20 - Train Loss: 1.3388, Acc: 0.5168 | Val Loss: 1.3071, Acc: 0.5372 | LR: 4.9e-04
+✨ New best val acc: 0.5372 at epoch 6
+Epoch 7/20 - Train Loss: 1.2590, Acc: 0.5460 | Val Loss: 1.2459, Acc: 0.5532 | LR: 4.8e-04
+✨ New best val acc: 0.5532 at epoch 7
+Epoch 8/20 - Train Loss: 1.1918, Acc: 0.5702 | Val Loss: 1.2187, Acc: 0.5648 | LR: 4.5e-04
+✨ New best val acc: 0.5648 at epoch 8
+Epoch 9/20 - Train Loss: 1.1292, Acc: 0.5908 | Val Loss: 1.1969, Acc: 0.5708 | LR: 4.2e-04
+✨ New best val acc: 0.5708 at epoch 9
+Epoch 10/20 - Train Loss: 1.0757, Acc: 0.6098 | Val Loss: 1.1918, Acc: 0.5792 | LR: 3.8e-04
+✨ New best val acc: 0.5792 at epoch 10
+Epoch 11/20 - Train Loss: 1.0192, Acc: 0.6337 | Val Loss: 1.1675, Acc: 0.5880 | LR: 3.3e-04
+✨ New best val acc: 0.5880 at epoch 11
+Epoch 12/20 - Train Loss: 0.9625, Acc: 0.6512 | Val Loss: 1.1528, Acc: 0.6002 | LR: 2.8e-04
+✨ New best val acc: 0.6002 at epoch 12
+Epoch 13/20 - Train Loss: 0.9011, Acc: 0.6739 | Val Loss: 1.1277, Acc: 0.6020 | LR: 2.2e-04
+✨ New best val acc: 0.6020 at epoch 13
+Epoch 14/20 - Train Loss: 0.8455, Acc: 0.6955 | Val Loss: 1.1646, Acc: 0.6050 | LR: 1.7e-04
+✨ New best val acc: 0.6050 at epoch 14
+Epoch 15/20 - Train Loss: 0.7907, Acc: 0.7140 | Val Loss: 1.1570, Acc: 0.6116 | LR: 1.3e-04
+✨ New best val acc: 0.6116 at epoch 15
+Epoch 16/20 - Train Loss: 0.7402, Acc: 0.7348 | Val Loss: 1.1569, Acc: 0.6126 | LR: 8.4e-05
+✨ New best val acc: 0.6126 at epoch 16
+Epoch 17/20 - Train Loss: 0.6981, Acc: 0.7490 | Val Loss: 1.1625, Acc: 0.6150 | LR: 4.9e-05
+✨ New best val acc: 0.6150 at epoch 17
+Epoch 18/20 - Train Loss: 0.6642, Acc: 0.7635 | Val Loss: 1.1640, Acc: 0.6198 | LR: 2.3e-05
+✨ New best val acc: 0.6198 at epoch 18
+Epoch 19/20 - Train Loss: 0.6473, Acc: 0.7687 | Val Loss: 1.1708, Acc: 0.6210 | LR: 6.5e-06
+✨ New best val acc: 0.6210 at epoch 19
+Epoch 20/20 - Train Loss: 0.6278, Acc: 0.7762 | Val Loss: 1.1738, Acc: 0.6202 | LR: 1.0e-06
+Training finished in 2.24 min. Best Val Acc: 0.6210
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.6112
+Stage1_Patch_8: Best Val Acc = 0.6210, Final Test Acc = 0.6112
+
+--- Stage 1 Result (Duration: 9.52 min): Best Patch Size = 4 (Val Acc: 0.7134) ---
+
+--- Saving Best Results for Stage1_Patch (ID: Stage1_Patch_4, Val Acc: 0.7134) ---
+[Stage1_Patch] Saved best config to results_vit_tuned/best_config_Stage1_Patch_4.json
+[Stage1_Patch] Saved best model state_dict to results_vit_tuned/models/best_vit_Stage1_Patch_4.pth
+Saved plot to results_vit_tuned/plots/best_curves_Stage1_Patch_4.png
+
+=============== Stage 2: Model Parameter Tuning (20 Epochs) ===============
+
+--- Testing Stage2_Model_baseline_m ---
+
+--- Running Config: Stage2_Model_baseline_m ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 256,
+  "depth": 8,
+  "num_heads": 8,
+  "mlp_ratio": 4.0,
+  "batch_size": 128,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 8
+}
+Data Augmentations: ['random_crop', 'horizontal_flip']
+Positional Embedding: 1d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 1D learned positional embedding.
+Model created with 6350602 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=3515, Decay=10545, Total=14060
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.9068, Acc: 0.2950 | Val Loss: 1.6612, Acc: 0.3876 | LR: 6.0e-05
+✨ New best val acc: 0.3876 at epoch 1
+Epoch 2/20 - Train Loss: 1.5967, Acc: 0.4180 | Val Loss: 1.4820, Acc: 0.4608 | LR: 1.2e-04
+✨ New best val acc: 0.4608 at epoch 2
+Epoch 3/20 - Train Loss: 1.3935, Acc: 0.4964 | Val Loss: 1.2464, Acc: 0.5492 | LR: 1.8e-04
+✨ New best val acc: 0.5492 at epoch 3
+Epoch 4/20 - Train Loss: 1.2157, Acc: 0.5616 | Val Loss: 1.1628, Acc: 0.5834 | LR: 2.4e-04
+✨ New best val acc: 0.5834 at epoch 4
+Epoch 5/20 - Train Loss: 1.0920, Acc: 0.6086 | Val Loss: 1.0297, Acc: 0.6198 | LR: 3.0e-04
+✨ New best val acc: 0.6198 at epoch 5
+Epoch 6/20 - Train Loss: 0.9993, Acc: 0.6413 | Val Loss: 0.9609, Acc: 0.6508 | LR: 3.0e-04
+✨ New best val acc: 0.6508 at epoch 6
+Epoch 7/20 - Train Loss: 0.9164, Acc: 0.6728 | Val Loss: 0.9162, Acc: 0.6736 | LR: 2.9e-04
+✨ New best val acc: 0.6736 at epoch 7
+Epoch 8/20 - Train Loss: 0.8524, Acc: 0.6967 | Val Loss: 0.8708, Acc: 0.6940 | LR: 2.7e-04
+✨ New best val acc: 0.6940 at epoch 8
+Epoch 9/20 - Train Loss: 0.7832, Acc: 0.7222 | Val Loss: 0.8174, Acc: 0.7134 | LR: 2.5e-04
+✨ New best val acc: 0.7134 at epoch 9
+Epoch 10/20 - Train Loss: 0.7243, Acc: 0.7443 | Val Loss: 0.7573, Acc: 0.7414 | LR: 2.3e-04
+✨ New best val acc: 0.7414 at epoch 10
+Epoch 11/20 - Train Loss: 0.6643, Acc: 0.7648 | Val Loss: 0.7576, Acc: 0.7388 | LR: 2.0e-04
+Epoch 12/20 - Train Loss: 0.6064, Acc: 0.7860 | Val Loss: 0.7340, Acc: 0.7502 | LR: 1.7e-04
+✨ New best val acc: 0.7502 at epoch 12
+Epoch 13/20 - Train Loss: 0.5505, Acc: 0.8058 | Val Loss: 0.7476, Acc: 0.7496 | LR: 1.3e-04
+Epoch 14/20 - Train Loss: 0.4918, Acc: 0.8256 | Val Loss: 0.7415, Acc: 0.7642 | LR: 1.0e-04
+✨ New best val acc: 0.7642 at epoch 14
+Epoch 15/20 - Train Loss: 0.4412, Acc: 0.8448 | Val Loss: 0.7296, Acc: 0.7644 | LR: 7.6e-05
+✨ New best val acc: 0.7644 at epoch 15
+Epoch 16/20 - Train Loss: 0.3955, Acc: 0.8609 | Val Loss: 0.7482, Acc: 0.7700 | LR: 5.0e-05
+✨ New best val acc: 0.7700 at epoch 16
+Epoch 17/20 - Train Loss: 0.3578, Acc: 0.8756 | Val Loss: 0.7253, Acc: 0.7818 | LR: 3.0e-05
+✨ New best val acc: 0.7818 at epoch 17
+Epoch 18/20 - Train Loss: 0.3288, Acc: 0.8865 | Val Loss: 0.7320, Acc: 0.7826 | LR: 1.4e-05
+✨ New best val acc: 0.7826 at epoch 18
+Epoch 19/20 - Train Loss: 0.3082, Acc: 0.8946 | Val Loss: 0.7342, Acc: 0.7846 | LR: 4.3e-06
+✨ New best val acc: 0.7846 at epoch 19
+Epoch 20/20 - Train Loss: 0.2999, Acc: 0.8968 | Val Loss: 0.7353, Acc: 0.7844 | LR: 1.0e-06
+Training finished in 24.66 min. Best Val Acc: 0.7846
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.7734
+Stage2_Model_baseline_m: Best Val Acc = 0.7846, Final Test Acc = 0.7734
+*** New best for Stage 2: Stage2_Model_baseline_m (Val Acc: 0.7846) ***
+*** New Overall Best CONFIG Found! (From Stage2_Model_baseline_m, Val Acc: 0.7846) ***
+
+--- Testing Stage2_Model_mlp_ratio_2 ---
+
+--- Running Config: Stage2_Model_mlp_ratio_2 ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 256,
+  "depth": 8,
+  "num_heads": 8,
+  "mlp_ratio": 2.0,
+  "batch_size": 128,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 8
+}
+Data Augmentations: ['random_crop', 'horizontal_flip']
+Positional Embedding: 1d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 1D learned positional embedding.
+Model created with 4249354 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=3515, Decay=10545, Total=14060
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.9197, Acc: 0.2913 | Val Loss: 1.7141, Acc: 0.3684 | LR: 6.0e-05
+✨ New best val acc: 0.3684 at epoch 1
+Epoch 2/20 - Train Loss: 1.6123, Acc: 0.4140 | Val Loss: 1.4763, Acc: 0.4628 | LR: 1.2e-04
+✨ New best val acc: 0.4628 at epoch 2
+Epoch 3/20 - Train Loss: 1.3847, Acc: 0.5011 | Val Loss: 1.2534, Acc: 0.5452 | LR: 1.8e-04
+✨ New best val acc: 0.5452 at epoch 3
+Epoch 4/20 - Train Loss: 1.2005, Acc: 0.5671 | Val Loss: 1.1452, Acc: 0.5846 | LR: 2.4e-04
+✨ New best val acc: 0.5846 at epoch 4
+Epoch 5/20 - Train Loss: 1.0758, Acc: 0.6151 | Val Loss: 1.0232, Acc: 0.6298 | LR: 3.0e-04
+✨ New best val acc: 0.6298 at epoch 5
+Epoch 6/20 - Train Loss: 0.9860, Acc: 0.6483 | Val Loss: 0.9338, Acc: 0.6634 | LR: 3.0e-04
+✨ New best val acc: 0.6634 at epoch 6
+Epoch 7/20 - Train Loss: 0.9032, Acc: 0.6783 | Val Loss: 0.9003, Acc: 0.6818 | LR: 2.9e-04
+✨ New best val acc: 0.6818 at epoch 7
+Epoch 8/20 - Train Loss: 0.8361, Acc: 0.7037 | Val Loss: 0.8974, Acc: 0.6848 | LR: 2.7e-04
+✨ New best val acc: 0.6848 at epoch 8
+Epoch 9/20 - Train Loss: 0.7697, Acc: 0.7253 | Val Loss: 0.8325, Acc: 0.7094 | LR: 2.5e-04
+✨ New best val acc: 0.7094 at epoch 9
+Epoch 10/20 - Train Loss: 0.7113, Acc: 0.7465 | Val Loss: 0.8059, Acc: 0.7192 | LR: 2.3e-04
+✨ New best val acc: 0.7192 at epoch 10
+Epoch 11/20 - Train Loss: 0.6517, Acc: 0.7691 | Val Loss: 0.7933, Acc: 0.7300 | LR: 2.0e-04
+✨ New best val acc: 0.7300 at epoch 11
+Epoch 12/20 - Train Loss: 0.5921, Acc: 0.7898 | Val Loss: 0.7805, Acc: 0.7462 | LR: 1.7e-04
+✨ New best val acc: 0.7462 at epoch 12
+Epoch 13/20 - Train Loss: 0.5383, Acc: 0.8074 | Val Loss: 0.7643, Acc: 0.7434 | LR: 1.3e-04
+Epoch 14/20 - Train Loss: 0.4825, Acc: 0.8291 | Val Loss: 0.7741, Acc: 0.7574 | LR: 1.0e-04
+✨ New best val acc: 0.7574 at epoch 14
+Epoch 15/20 - Train Loss: 0.4318, Acc: 0.8472 | Val Loss: 0.7416, Acc: 0.7652 | LR: 7.6e-05
+✨ New best val acc: 0.7652 at epoch 15
+Epoch 16/20 - Train Loss: 0.3868, Acc: 0.8646 | Val Loss: 0.7581, Acc: 0.7648 | LR: 5.0e-05
+Epoch 17/20 - Train Loss: 0.3553, Acc: 0.8767 | Val Loss: 0.7663, Acc: 0.7640 | LR: 3.0e-05
+Epoch 18/20 - Train Loss: 0.3254, Acc: 0.8885 | Val Loss: 0.7626, Acc: 0.7692 | LR: 1.4e-05
+✨ New best val acc: 0.7692 at epoch 18
+Epoch 19/20 - Train Loss: 0.3036, Acc: 0.8961 | Val Loss: 0.7683, Acc: 0.7700 | LR: 4.3e-06
+✨ New best val acc: 0.7700 at epoch 19
+Epoch 20/20 - Train Loss: 0.2969, Acc: 0.8986 | Val Loss: 0.7703, Acc: 0.7692 | LR: 1.0e-06
+Training finished in 20.35 min. Best Val Acc: 0.7700
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.7719
+Stage2_Model_mlp_ratio_2: Best Val Acc = 0.7700, Final Test Acc = 0.7719
+
+--- Testing Stage2_Model_deeper ---
+
+--- Running Config: Stage2_Model_deeper ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 256,
+  "depth": 12,
+  "num_heads": 8,
+  "mlp_ratio": 4.0,
+  "batch_size": 128,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 8
+}
+Data Augmentations: ['random_crop', 'horizontal_flip']
+Positional Embedding: 1d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 1D learned positional embedding.
+Model created with 9509642 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=3515, Decay=10545, Total=14060
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.9080, Acc: 0.2959 | Val Loss: 1.7089, Acc: 0.3662 | LR: 6.0e-05
+✨ New best val acc: 0.3662 at epoch 1
+Epoch 2/20 - Train Loss: 1.5955, Acc: 0.4165 | Val Loss: 1.4336, Acc: 0.4850 | LR: 1.2e-04
+✨ New best val acc: 0.4850 at epoch 2
+Epoch 3/20 - Train Loss: 1.3659, Acc: 0.5054 | Val Loss: 1.2156, Acc: 0.5596 | LR: 1.8e-04
+✨ New best val acc: 0.5596 at epoch 3
+Epoch 4/20 - Train Loss: 1.1918, Acc: 0.5711 | Val Loss: 1.1218, Acc: 0.6024 | LR: 2.4e-04
+✨ New best val acc: 0.6024 at epoch 4
+Epoch 5/20 - Train Loss: 1.0787, Acc: 0.6139 | Val Loss: 1.0381, Acc: 0.6288 | LR: 3.0e-04
+✨ New best val acc: 0.6288 at epoch 5
+Epoch 6/20 - Train Loss: 0.9819, Acc: 0.6491 | Val Loss: 0.9635, Acc: 0.6608 | LR: 3.0e-04
+✨ New best val acc: 0.6608 at epoch 6
+Epoch 7/20 - Train Loss: 0.9019, Acc: 0.6757 | Val Loss: 0.9140, Acc: 0.6786 | LR: 2.9e-04
+✨ New best val acc: 0.6786 at epoch 7
+Epoch 8/20 - Train Loss: 0.8354, Acc: 0.7024 | Val Loss: 0.8873, Acc: 0.6914 | LR: 2.7e-04
+✨ New best val acc: 0.6914 at epoch 8
+Epoch 9/20 - Train Loss: 0.7677, Acc: 0.7269 | Val Loss: 0.8343, Acc: 0.7050 | LR: 2.5e-04
+✨ New best val acc: 0.7050 at epoch 9
+Epoch 10/20 - Train Loss: 0.7121, Acc: 0.7461 | Val Loss: 0.8125, Acc: 0.7174 | LR: 2.3e-04
+✨ New best val acc: 0.7174 at epoch 10
+Epoch 11/20 - Train Loss: 0.6475, Acc: 0.7700 | Val Loss: 0.8072, Acc: 0.7248 | LR: 2.0e-04
+✨ New best val acc: 0.7248 at epoch 11
+Epoch 12/20 - Train Loss: 0.5866, Acc: 0.7923 | Val Loss: 0.7826, Acc: 0.7368 | LR: 1.7e-04
+✨ New best val acc: 0.7368 at epoch 12
+Epoch 13/20 - Train Loss: 0.5305, Acc: 0.8122 | Val Loss: 0.7209, Acc: 0.7584 | LR: 1.3e-04
+✨ New best val acc: 0.7584 at epoch 13
+Epoch 14/20 - Train Loss: 0.4746, Acc: 0.8319 | Val Loss: 0.7836, Acc: 0.7574 | LR: 1.0e-04
+Epoch 15/20 - Train Loss: 0.4209, Acc: 0.8529 | Val Loss: 0.7480, Acc: 0.7676 | LR: 7.6e-05
+✨ New best val acc: 0.7676 at epoch 15
+Epoch 16/20 - Train Loss: 0.3708, Acc: 0.8718 | Val Loss: 0.7460, Acc: 0.7746 | LR: 5.0e-05
+✨ New best val acc: 0.7746 at epoch 16
+Epoch 17/20 - Train Loss: 0.3282, Acc: 0.8860 | Val Loss: 0.7589, Acc: 0.7754 | LR: 3.0e-05
+✨ New best val acc: 0.7754 at epoch 17
+Epoch 18/20 - Train Loss: 0.3013, Acc: 0.8974 | Val Loss: 0.7708, Acc: 0.7740 | LR: 1.4e-05
+Epoch 19/20 - Train Loss: 0.2820, Acc: 0.9038 | Val Loss: 0.7785, Acc: 0.7736 | LR: 4.3e-06
+Epoch 20/20 - Train Loss: 0.2724, Acc: 0.9080 | Val Loss: 0.7728, Acc: 0.7786 | LR: 1.0e-06
+✨ New best val acc: 0.7786 at epoch 20
+Training finished in 36.57 min. Best Val Acc: 0.7786
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.7787
+Stage2_Model_deeper: Best Val Acc = 0.7786, Final Test Acc = 0.7787
+
+--- Testing Stage2_Model_wider ---
+
+--- Running Config: Stage2_Model_wider ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 384,
+  "depth": 8,
+  "num_heads": 12,
+  "mlp_ratio": 4.0,
+  "batch_size": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 8
+}
+Data Augmentations: ['random_crop', 'horizontal_flip']
+Positional Embedding: 1d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 1D learned positional embedding.
+Model created with 14244490 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=7030, Decay=21090, Total=28120
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.8248, Acc: 0.3257 | Val Loss: 1.5736, Acc: 0.4300 | LR: 6.0e-05
+✨ New best val acc: 0.4300 at epoch 1
+Epoch 2/20 - Train Loss: 1.4765, Acc: 0.4627 | Val Loss: 1.3398, Acc: 0.5156 | LR: 1.2e-04
+✨ New best val acc: 0.5156 at epoch 2
+Epoch 3/20 - Train Loss: 1.2592, Acc: 0.5455 | Val Loss: 1.1907, Acc: 0.5742 | LR: 1.8e-04
+✨ New best val acc: 0.5742 at epoch 3
+Epoch 4/20 - Train Loss: 1.1296, Acc: 0.5937 | Val Loss: 1.1047, Acc: 0.5946 | LR: 2.4e-04
+✨ New best val acc: 0.5946 at epoch 4
+Epoch 5/20 - Train Loss: 1.0400, Acc: 0.6262 | Val Loss: 1.0268, Acc: 0.6334 | LR: 3.0e-04
+✨ New best val acc: 0.6334 at epoch 5
+Epoch 6/20 - Train Loss: 0.9644, Acc: 0.6555 | Val Loss: 0.9617, Acc: 0.6578 | LR: 3.0e-04
+✨ New best val acc: 0.6578 at epoch 6
+Epoch 7/20 - Train Loss: 0.8813, Acc: 0.6863 | Val Loss: 0.9082, Acc: 0.6836 | LR: 2.9e-04
+✨ New best val acc: 0.6836 at epoch 7
+Epoch 8/20 - Train Loss: 0.8061, Acc: 0.7120 | Val Loss: 0.8413, Acc: 0.7120 | LR: 2.7e-04
+✨ New best val acc: 0.7120 at epoch 8
+Epoch 9/20 - Train Loss: 0.7304, Acc: 0.7395 | Val Loss: 0.8130, Acc: 0.7142 | LR: 2.5e-04
+✨ New best val acc: 0.7142 at epoch 9
+Epoch 10/20 - Train Loss: 0.6573, Acc: 0.7664 | Val Loss: 0.7570, Acc: 0.7406 | LR: 2.3e-04
+✨ New best val acc: 0.7406 at epoch 10
+Epoch 11/20 - Train Loss: 0.5820, Acc: 0.7926 | Val Loss: 0.7548, Acc: 0.7406 | LR: 2.0e-04
+Epoch 12/20 - Train Loss: 0.5123, Acc: 0.8190 | Val Loss: 0.6948, Acc: 0.7706 | LR: 1.7e-04
+✨ New best val acc: 0.7706 at epoch 12
+Epoch 13/20 - Train Loss: 0.4362, Acc: 0.8457 | Val Loss: 0.7000, Acc: 0.7792 | LR: 1.3e-04
+✨ New best val acc: 0.7792 at epoch 13
+Epoch 14/20 - Train Loss: 0.3665, Acc: 0.8713 | Val Loss: 0.7041, Acc: 0.7798 | LR: 1.0e-04
+✨ New best val acc: 0.7798 at epoch 14
+Epoch 15/20 - Train Loss: 0.3026, Acc: 0.8946 | Val Loss: 0.7098, Acc: 0.7924 | LR: 7.6e-05
+✨ New best val acc: 0.7924 at epoch 15
+Epoch 16/20 - Train Loss: 0.2479, Acc: 0.9149 | Val Loss: 0.7390, Acc: 0.7950 | LR: 5.0e-05
+✨ New best val acc: 0.7950 at epoch 16
+Epoch 17/20 - Train Loss: 0.2062, Acc: 0.9301 | Val Loss: 0.7505, Acc: 0.8030 | LR: 3.0e-05
+✨ New best val acc: 0.8030 at epoch 17
+Epoch 18/20 - Train Loss: 0.1749, Acc: 0.9410 | Val Loss: 0.7766, Acc: 0.7988 | LR: 1.4e-05
+Epoch 19/20 - Train Loss: 0.1578, Acc: 0.9475 | Val Loss: 0.7716, Acc: 0.8008 | LR: 4.3e-06
+Epoch 20/20 - Train Loss: 0.1508, Acc: 0.9499 | Val Loss: 0.7767, Acc: 0.8014 | LR: 1.0e-06
+Training finished in 43.74 min. Best Val Acc: 0.8030
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.7952
+Stage2_Model_wider: Best Val Acc = 0.8030, Final Test Acc = 0.7952
+*** New best for Stage 2: Stage2_Model_wider (Val Acc: 0.8030) ***
+*** New Overall Best CONFIG Found! (From Stage2_Model_wider, Val Acc: 0.8030) ***
+
+--- Testing Stage2_Model_smaller ---
+
+--- Running Config: Stage2_Model_smaller ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 192,
+  "depth": 6,
+  "num_heads": 6,
+  "mlp_ratio": 4.0,
+  "batch_size": 128,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 8
+}
+Data Augmentations: ['random_crop', 'horizontal_flip']
+Positional Embedding: 1d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 1D learned positional embedding.
+Model created with 2693578 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=3515, Decay=10545, Total=14060
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.9719, Acc: 0.2708 | Val Loss: 1.7919, Acc: 0.3406 | LR: 6.0e-05
+✨ New best val acc: 0.3406 at epoch 1
+Epoch 2/20 - Train Loss: 1.6693, Acc: 0.3905 | Val Loss: 1.5346, Acc: 0.4394 | LR: 1.2e-04
+✨ New best val acc: 0.4394 at epoch 2
+Epoch 3/20 - Train Loss: 1.4655, Acc: 0.4701 | Val Loss: 1.3174, Acc: 0.5202 | LR: 1.8e-04
+✨ New best val acc: 0.5202 at epoch 3
+Epoch 4/20 - Train Loss: 1.2937, Acc: 0.5328 | Val Loss: 1.2089, Acc: 0.5594 | LR: 2.4e-04
+✨ New best val acc: 0.5594 at epoch 4
+Epoch 5/20 - Train Loss: 1.1725, Acc: 0.5761 | Val Loss: 1.1488, Acc: 0.5868 | LR: 3.0e-04
+✨ New best val acc: 0.5868 at epoch 5
+Epoch 6/20 - Train Loss: 1.0788, Acc: 0.6104 | Val Loss: 1.0338, Acc: 0.6358 | LR: 3.0e-04
+✨ New best val acc: 0.6358 at epoch 6
+Epoch 7/20 - Train Loss: 1.0007, Acc: 0.6399 | Val Loss: 0.9514, Acc: 0.6566 | LR: 2.9e-04
+✨ New best val acc: 0.6566 at epoch 7
+Epoch 8/20 - Train Loss: 0.9321, Acc: 0.6662 | Val Loss: 0.9111, Acc: 0.6830 | LR: 2.7e-04
+✨ New best val acc: 0.6830 at epoch 8
+Epoch 9/20 - Train Loss: 0.8816, Acc: 0.6850 | Val Loss: 0.8954, Acc: 0.6822 | LR: 2.5e-04
+Epoch 10/20 - Train Loss: 0.8276, Acc: 0.7043 | Val Loss: 0.8447, Acc: 0.7132 | LR: 2.3e-04
+✨ New best val acc: 0.7132 at epoch 10
+Epoch 11/20 - Train Loss: 0.7760, Acc: 0.7237 | Val Loss: 0.8212, Acc: 0.7186 | LR: 2.0e-04
+✨ New best val acc: 0.7186 at epoch 11
+Epoch 12/20 - Train Loss: 0.7268, Acc: 0.7413 | Val Loss: 0.7974, Acc: 0.7230 | LR: 1.7e-04
+✨ New best val acc: 0.7230 at epoch 12
+Epoch 13/20 - Train Loss: 0.6803, Acc: 0.7579 | Val Loss: 0.7828, Acc: 0.7396 | LR: 1.3e-04
+✨ New best val acc: 0.7396 at epoch 13
+Epoch 14/20 - Train Loss: 0.6381, Acc: 0.7734 | Val Loss: 0.7608, Acc: 0.7396 | LR: 1.0e-04
+Epoch 15/20 - Train Loss: 0.5955, Acc: 0.7886 | Val Loss: 0.7424, Acc: 0.7482 | LR: 7.6e-05
+✨ New best val acc: 0.7482 at epoch 15
+Epoch 16/20 - Train Loss: 0.5602, Acc: 0.8008 | Val Loss: 0.7417, Acc: 0.7548 | LR: 5.0e-05
+✨ New best val acc: 0.7548 at epoch 16
+Epoch 17/20 - Train Loss: 0.5288, Acc: 0.8135 | Val Loss: 0.7415, Acc: 0.7532 | LR: 3.0e-05
+Epoch 18/20 - Train Loss: 0.5035, Acc: 0.8221 | Val Loss: 0.7429, Acc: 0.7580 | LR: 1.4e-05
+✨ New best val acc: 0.7580 at epoch 18
+Epoch 19/20 - Train Loss: 0.4927, Acc: 0.8258 | Val Loss: 0.7388, Acc: 0.7598 | LR: 4.3e-06
+✨ New best val acc: 0.7598 at epoch 19
+Epoch 20/20 - Train Loss: 0.4834, Acc: 0.8284 | Val Loss: 0.7383, Acc: 0.7592 | LR: 1.0e-06
+Training finished in 13.99 min. Best Val Acc: 0.7598
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.7600
+Stage2_Model_smaller: Best Val Acc = 0.7598, Final Test Acc = 0.7600
+
+--- Stage 2 Result (Duration: 139.83 min): Best Model Config = 'wider' (Val Acc: 0.8030) ---
+
+--- Saving Best Results for Stage2_Model (ID: Stage2_Model_wider, Val Acc: 0.8030) ---
+[Stage2_Model] Saved best config to results_vit_tuned/best_config_Stage2_Model_wider.json
+[Stage2_Model] Saved best model state_dict to results_vit_tuned/models/best_vit_Stage2_Model_wider.pth
+Saved plot to results_vit_tuned/plots/best_curves_Stage2_Model_wider.png
+
+=============== Stage 3: Data Augmentation Tuning (20 Epochs) ===============
+
+--- Testing Stage3_Aug_None ---
+Augmentations: None
+
+--- Running Config: Stage3_Aug_None ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 384,
+  "depth": 8,
+  "num_heads": 12,
+  "mlp_ratio": 4.0,
+  "batch_size": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 8
+}
+Data Augmentations: None
+Positional Embedding: 1d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 1D learned positional embedding.
+Model created with 14244490 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=3515, Decay=10545, Total=14060
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.9079, Acc: 0.2929 | Val Loss: 1.6979, Acc: 0.3750 | LR: 6.0e-05
+✨ New best val acc: 0.3750 at epoch 1
+Epoch 2/20 - Train Loss: 1.5984, Acc: 0.4195 | Val Loss: 1.4768, Acc: 0.4652 | LR: 1.2e-04
+✨ New best val acc: 0.4652 at epoch 2
+Epoch 3/20 - Train Loss: 1.4035, Acc: 0.4906 | Val Loss: 1.3041, Acc: 0.5224 | LR: 1.8e-04
+✨ New best val acc: 0.5224 at epoch 3
+Epoch 4/20 - Train Loss: 1.2759, Acc: 0.5399 | Val Loss: 1.2548, Acc: 0.5432 | LR: 2.4e-04
+✨ New best val acc: 0.5432 at epoch 4
+Epoch 5/20 - Train Loss: 1.1977, Acc: 0.5709 | Val Loss: 1.1861, Acc: 0.5656 | LR: 3.0e-04
+✨ New best val acc: 0.5656 at epoch 5
+Epoch 6/20 - Train Loss: 1.1133, Acc: 0.6005 | Val Loss: 1.1315, Acc: 0.5834 | LR: 3.0e-04
+✨ New best val acc: 0.5834 at epoch 6
+Epoch 7/20 - Train Loss: 1.0428, Acc: 0.6259 | Val Loss: 1.0690, Acc: 0.6160 | LR: 2.9e-04
+✨ New best val acc: 0.6160 at epoch 7
+Epoch 8/20 - Train Loss: 0.9705, Acc: 0.6532 | Val Loss: 0.9976, Acc: 0.6332 | LR: 2.7e-04
+✨ New best val acc: 0.6332 at epoch 8
+Epoch 9/20 - Train Loss: 0.9015, Acc: 0.6773 | Val Loss: 0.9932, Acc: 0.6484 | LR: 2.5e-04
+✨ New best val acc: 0.6484 at epoch 9
+Epoch 10/20 - Train Loss: 0.8241, Acc: 0.7036 | Val Loss: 0.9296, Acc: 0.6708 | LR: 2.3e-04
+✨ New best val acc: 0.6708 at epoch 10
+Epoch 11/20 - Train Loss: 0.7503, Acc: 0.7324 | Val Loss: 0.8858, Acc: 0.6928 | LR: 2.0e-04
+✨ New best val acc: 0.6928 at epoch 11
+Epoch 12/20 - Train Loss: 0.6602, Acc: 0.7629 | Val Loss: 0.8816, Acc: 0.6966 | LR: 1.7e-04
+✨ New best val acc: 0.6966 at epoch 12
+Epoch 13/20 - Train Loss: 0.5699, Acc: 0.7960 | Val Loss: 0.8796, Acc: 0.6984 | LR: 1.3e-04
+✨ New best val acc: 0.6984 at epoch 13
+Epoch 14/20 - Train Loss: 0.4780, Acc: 0.8290 | Val Loss: 0.9034, Acc: 0.7056 | LR: 1.0e-04
+✨ New best val acc: 0.7056 at epoch 14
+Epoch 15/20 - Train Loss: 0.3832, Acc: 0.8640 | Val Loss: 0.9924, Acc: 0.7012 | LR: 7.6e-05
+Epoch 16/20 - Train Loss: 0.2945, Acc: 0.8963 | Val Loss: 0.9917, Acc: 0.7228 | LR: 5.0e-05
+✨ New best val acc: 0.7228 at epoch 16
+Epoch 17/20 - Train Loss: 0.2266, Acc: 0.9201 | Val Loss: 1.0682, Acc: 0.7154 | LR: 3.0e-05
+Epoch 18/20 - Train Loss: 0.1741, Acc: 0.9405 | Val Loss: 1.1340, Acc: 0.7158 | LR: 1.4e-05
+Epoch 19/20 - Train Loss: 0.1445, Acc: 0.9519 | Val Loss: 1.1365, Acc: 0.7192 | LR: 4.3e-06
+Epoch 20/20 - Train Loss: 0.1311, Acc: 0.9571 | Val Loss: 1.1442, Acc: 0.7204 | LR: 1.0e-06
+Training finished in 22.33 min. Best Val Acc: 0.7228
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.7152
+Stage3_Aug_None: Best Val Acc = 0.7228, Final Test Acc = 0.7152
+*** New best for Stage 3: Stage3_Aug_None (Val Acc: 0.7228) ***
+
+--- Testing Stage3_Aug_Mild ---
+Augmentations: ['random_crop', 'horizontal_flip']
+
+--- Running Config: Stage3_Aug_Mild ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 384,
+  "depth": 8,
+  "num_heads": 12,
+  "mlp_ratio": 4.0,
+  "batch_size": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 8
+}
+Data Augmentations: ['random_crop', 'horizontal_flip']
+Positional Embedding: 1d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 1D learned positional embedding.
+Model created with 14244490 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=7030, Decay=21090, Total=28120
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.8288, Acc: 0.3219 | Val Loss: 1.5687, Acc: 0.4372 | LR: 6.0e-05
+✨ New best val acc: 0.4372 at epoch 1
+Epoch 2/20 - Train Loss: 1.4644, Acc: 0.4664 | Val Loss: 1.3282, Acc: 0.5186 | LR: 1.2e-04
+✨ New best val acc: 0.5186 at epoch 2
+Epoch 3/20 - Train Loss: 1.2453, Acc: 0.5492 | Val Loss: 1.1469, Acc: 0.5814 | LR: 1.8e-04
+✨ New best val acc: 0.5814 at epoch 3
+Epoch 4/20 - Train Loss: 1.1088, Acc: 0.5995 | Val Loss: 1.1297, Acc: 0.5970 | LR: 2.4e-04
+✨ New best val acc: 0.5970 at epoch 4
+Epoch 5/20 - Train Loss: 1.0335, Acc: 0.6303 | Val Loss: 1.0141, Acc: 0.6352 | LR: 3.0e-04
+✨ New best val acc: 0.6352 at epoch 5
+Epoch 6/20 - Train Loss: 0.9531, Acc: 0.6593 | Val Loss: 0.9449, Acc: 0.6568 | LR: 3.0e-04
+✨ New best val acc: 0.6568 at epoch 6
+Epoch 7/20 - Train Loss: 0.8761, Acc: 0.6877 | Val Loss: 0.9755, Acc: 0.6492 | LR: 2.9e-04
+Epoch 8/20 - Train Loss: 0.7999, Acc: 0.7162 | Val Loss: 0.8674, Acc: 0.6980 | LR: 2.7e-04
+✨ New best val acc: 0.6980 at epoch 8
+Epoch 9/20 - Train Loss: 0.7273, Acc: 0.7419 | Val Loss: 0.7474, Acc: 0.7350 | LR: 2.5e-04
+✨ New best val acc: 0.7350 at epoch 9
+Epoch 10/20 - Train Loss: 0.6519, Acc: 0.7682 | Val Loss: 0.7424, Acc: 0.7360 | LR: 2.3e-04
+✨ New best val acc: 0.7360 at epoch 10
+Epoch 11/20 - Train Loss: 0.5791, Acc: 0.7937 | Val Loss: 0.7597, Acc: 0.7436 | LR: 2.0e-04
+✨ New best val acc: 0.7436 at epoch 11
+Epoch 12/20 - Train Loss: 0.5060, Acc: 0.8206 | Val Loss: 0.7504, Acc: 0.7522 | LR: 1.7e-04
+✨ New best val acc: 0.7522 at epoch 12
+Epoch 13/20 - Train Loss: 0.4345, Acc: 0.8464 | Val Loss: 0.6909, Acc: 0.7750 | LR: 1.3e-04
+✨ New best val acc: 0.7750 at epoch 13
+Epoch 14/20 - Train Loss: 0.3658, Acc: 0.8718 | Val Loss: 0.7056, Acc: 0.7818 | LR: 1.0e-04
+✨ New best val acc: 0.7818 at epoch 14
+Epoch 15/20 - Train Loss: 0.3029, Acc: 0.8934 | Val Loss: 0.7337, Acc: 0.7862 | LR: 7.6e-05
+✨ New best val acc: 0.7862 at epoch 15
+Epoch 16/20 - Train Loss: 0.2469, Acc: 0.9152 | Val Loss: 0.7379, Acc: 0.7928 | LR: 5.0e-05
+✨ New best val acc: 0.7928 at epoch 16
+Epoch 17/20 - Train Loss: 0.2079, Acc: 0.9293 | Val Loss: 0.7561, Acc: 0.7968 | LR: 3.0e-05
+✨ New best val acc: 0.7968 at epoch 17
+Epoch 18/20 - Train Loss: 0.1760, Acc: 0.9405 | Val Loss: 0.7627, Acc: 0.7958 | LR: 1.4e-05
+Epoch 19/20 - Train Loss: 0.1579, Acc: 0.9471 | Val Loss: 0.7799, Acc: 0.8008 | LR: 4.3e-06
+✨ New best val acc: 0.8008 at epoch 19
+Epoch 20/20 - Train Loss: 0.1507, Acc: 0.9497 | Val Loss: 0.7773, Acc: 0.7998 | LR: 1.0e-06
+Training finished in 43.68 min. Best Val Acc: 0.8008
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.7994
+Stage3_Aug_Mild: Best Val Acc = 0.8008, Final Test Acc = 0.7994
+*** New best for Stage 3: Stage3_Aug_Mild (Val Acc: 0.8008) ***
+
+--- Stage 3 Result (Duration: 66.27 min): Best Aug Strategy = 'Mild' (Val Acc: 0.8008) ---
+
+--- Saving Best Results for Stage3_Aug (ID: Stage3_Aug_Mild, Val Acc: 0.8008) ---
+[Stage3_Aug] Saved best config to results_vit_tuned/best_config_Stage3_Aug_Mild.json
+[Stage3_Aug] Saved best model state_dict to results_vit_tuned/models/best_vit_Stage3_Aug_Mild.pth
+Saved plot to results_vit_tuned/plots/best_curves_Stage3_Aug_Mild.png
+
+=============== Stage 4: Positional Embedding Tuning (20 Epochs) ===============
+
+--- Testing Stage4_Pos_1d_learned ---
+
+--- Running Config: Stage4_Pos_1d_learned ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 384,
+  "depth": 8,
+  "num_heads": 12,
+  "mlp_ratio": 4.0,
+  "batch_size": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 8
+}
+Data Augmentations: ['random_crop', 'horizontal_flip']
+Positional Embedding: 1d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 1D learned positional embedding.
+Model created with 14244490 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=7030, Decay=21090, Total=28120
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.8199, Acc: 0.3266 | Val Loss: 1.5801, Acc: 0.4314 | LR: 6.0e-05
+✨ New best val acc: 0.4314 at epoch 1
+Epoch 2/20 - Train Loss: 1.4543, Acc: 0.4714 | Val Loss: 1.2973, Acc: 0.5350 | LR: 1.2e-04
+✨ New best val acc: 0.5350 at epoch 2
+Epoch 3/20 - Train Loss: 1.2416, Acc: 0.5522 | Val Loss: 1.1513, Acc: 0.5782 | LR: 1.8e-04
+✨ New best val acc: 0.5782 at epoch 3
+Epoch 4/20 - Train Loss: 1.1068, Acc: 0.6005 | Val Loss: 1.0693, Acc: 0.6172 | LR: 2.4e-04
+✨ New best val acc: 0.6172 at epoch 4
+Epoch 5/20 - Train Loss: 1.0280, Acc: 0.6309 | Val Loss: 1.0107, Acc: 0.6434 | LR: 3.0e-04
+✨ New best val acc: 0.6434 at epoch 5
+Epoch 6/20 - Train Loss: 0.9598, Acc: 0.6551 | Val Loss: 0.9392, Acc: 0.6664 | LR: 3.0e-04
+✨ New best val acc: 0.6664 at epoch 6
+Epoch 7/20 - Train Loss: 0.8778, Acc: 0.6869 | Val Loss: 0.9229, Acc: 0.6686 | LR: 2.9e-04
+✨ New best val acc: 0.6686 at epoch 7
+Epoch 8/20 - Train Loss: 0.8014, Acc: 0.7164 | Val Loss: 0.8991, Acc: 0.6888 | LR: 2.7e-04
+✨ New best val acc: 0.6888 at epoch 8
+Epoch 9/20 - Train Loss: 0.7263, Acc: 0.7412 | Val Loss: 0.8577, Acc: 0.7060 | LR: 2.5e-04
+✨ New best val acc: 0.7060 at epoch 9
+Epoch 10/20 - Train Loss: 0.6571, Acc: 0.7663 | Val Loss: 0.7515, Acc: 0.7418 | LR: 2.3e-04
+✨ New best val acc: 0.7418 at epoch 10
+Epoch 11/20 - Train Loss: 0.5815, Acc: 0.7926 | Val Loss: 0.7213, Acc: 0.7528 | LR: 2.0e-04
+✨ New best val acc: 0.7528 at epoch 11
+Epoch 12/20 - Train Loss: 0.5035, Acc: 0.8217 | Val Loss: 0.7807, Acc: 0.7476 | LR: 1.7e-04
+Epoch 13/20 - Train Loss: 0.4354, Acc: 0.8454 | Val Loss: 0.7081, Acc: 0.7710 | LR: 1.3e-04
+✨ New best val acc: 0.7710 at epoch 13
+Epoch 14/20 - Train Loss: 0.3658, Acc: 0.8715 | Val Loss: 0.7081, Acc: 0.7852 | LR: 1.0e-04
+✨ New best val acc: 0.7852 at epoch 14
+Epoch 15/20 - Train Loss: 0.3020, Acc: 0.8955 | Val Loss: 0.7443, Acc: 0.7926 | LR: 7.6e-05
+✨ New best val acc: 0.7926 at epoch 15
+Epoch 16/20 - Train Loss: 0.2444, Acc: 0.9164 | Val Loss: 0.7631, Acc: 0.7882 | LR: 5.0e-05
+Epoch 17/20 - Train Loss: 0.2055, Acc: 0.9298 | Val Loss: 0.7793, Acc: 0.7926 | LR: 3.0e-05
+Epoch 18/20 - Train Loss: 0.1783, Acc: 0.9406 | Val Loss: 0.7838, Acc: 0.7936 | LR: 1.4e-05
+✨ New best val acc: 0.7936 at epoch 18
+Epoch 19/20 - Train Loss: 0.1542, Acc: 0.9487 | Val Loss: 0.7969, Acc: 0.7932 | LR: 4.3e-06
+Epoch 20/20 - Train Loss: 0.1433, Acc: 0.9521 | Val Loss: 0.8043, Acc: 0.7926 | LR: 1.0e-06
+Training finished in 43.64 min. Best Val Acc: 0.7936
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.7947
+Stage4_Pos_1d_learned: Best Val Acc = 0.7936, Final Test Acc = 0.7947
+*** New best for Stage 4: Stage4_Pos_1d_learned (Val Acc: 0.7936) ***
+
+=============== Stage 4: Positional Embedding Tuning (Resume - 20 Epochs) ===============
+Skipping Stage4_Pos_1d_learned as results exist.
+Found existing results for Stage4_Pos_2d_learned. Loading accuracy.
+  Loaded Val Acc: 0.8062
+Updated overall best config from loaded Stage 4: Stage4_Pos_2d_learned (Val Acc: 0.8062)
+Skipping Stage4_Pos_sinusoidal as results exist.
+Results for Stage4_Pos_no_pos not found. Adding to run queue.
+
+--- Testing Stage4_Pos_sinusoidal ---
+
+--- Running Config: Stage4_Pos_sinusoidal ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 384,
+  "depth": 8,
+  "num_heads": 12,
+  "mlp_ratio": 4.0,
+  "batch_size": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "sinusoidal",
+  "n_workers": 8,
+  "achieved_val_accuracy": 0.803
+}
+Data Augmentations: ['random_crop', 'horizontal_flip']
+Positional Embedding: sinusoidal
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using sinusoidal positional embedding.
+Model created with 14219530 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=7030, Decay=21090, Total=28120
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.8026, Acc: 0.3322 | Val Loss: 1.3763, Acc: 0.5018 | LR: 6.0e-05
+✨ New best val acc: 0.5018 at epoch 1
+Epoch 2/20 - Train Loss: 1.2369, Acc: 0.5546 | Val Loss: 1.1127, Acc: 0.6032 | LR: 1.2e-04
+✨ New best val acc: 0.6032 at epoch 2
+Epoch 3/20 - Train Loss: 1.0536, Acc: 0.6242 | Val Loss: 1.0488, Acc: 0.6348 | LR: 1.8e-04
+✨ New best val acc: 0.6348 at epoch 3
+Epoch 4/20 - Train Loss: 0.9569, Acc: 0.6607 | Val Loss: 0.9622, Acc: 0.6634 | LR: 2.4e-04
+✨ New best val acc: 0.6634 at epoch 4
+Epoch 5/20 [Train]: 100%|█████████████████████████████████████████▉| 1405/1406 [02:07<00:00, 10.95it/s, acc=0.6094, loss=1.0687, lr=3.0e-04]/home2/siddharth.s/miniconda3/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Epoch 5/20 - Train Loss: 0.9023, Acc: 0.6795 | Val Loss: 0.8890, Acc: 0.6776 | LR: 3.0e-04
+✨ New best val acc: 0.6776 at epoch 5
+Epoch 6/20 - Train Loss: 0.8400, Acc: 0.7026 | Val Loss: 0.8706, Acc: 0.7016 | LR: 3.0e-04
+✨ New best val acc: 0.7016 at epoch 6
+Epoch 7/20 - Train Loss: 0.7615, Acc: 0.7305 | Val Loss: 0.8139, Acc: 0.7102 | LR: 2.9e-04
+✨ New best val acc: 0.7102 at epoch 7
+Epoch 8/20 - Train Loss: 0.6841, Acc: 0.7570 | Val Loss: 0.7910, Acc: 0.7136 | LR: 2.7e-04
+✨ New best val acc: 0.7136 at epoch 8
+Epoch 9/20 - Train Loss: 0.6073, Acc: 0.7851 | Val Loss: 0.7072, Acc: 0.7574 | LR: 2.5e-04
+✨ New best val acc: 0.7574 at epoch 9
+Epoch 10/20 - Train Loss: 0.5282, Acc: 0.8136 | Val Loss: 0.7142, Acc: 0.7630 | LR: 2.3e-04
+✨ New best val acc: 0.7630 at epoch 10
+Epoch 11/20 - Train Loss: 0.4553, Acc: 0.8395 | Val Loss: 0.6758, Acc: 0.7774 | LR: 2.0e-04
+✨ New best val acc: 0.7774 at epoch 11
+Epoch 12/20 - Train Loss: 0.3864, Acc: 0.8646 | Val Loss: 0.6651, Acc: 0.7882 | LR: 1.7e-04
+✨ New best val acc: 0.7882 at epoch 12
+Epoch 13/20 - Train Loss: 0.3138, Acc: 0.8897 | Val Loss: 0.6833, Acc: 0.7922 | LR: 1.3e-04
+✨ New best val acc: 0.7922 at epoch 13
+Epoch 14/20 - Train Loss: 0.2531, Acc: 0.9109 | Val Loss: 0.7215, Acc: 0.8006 | LR: 1.0e-04
+✨ New best val acc: 0.8006 at epoch 14
+Epoch 15/20 - Train Loss: 0.1980, Acc: 0.9320 | Val Loss: 0.7191, Acc: 0.8068 | LR: 7.6e-05
+✨ New best val acc: 0.8068 at epoch 15
+Epoch 16/20 - Train Loss: 0.1620, Acc: 0.9450 | Val Loss: 0.7509, Acc: 0.8090 | LR: 5.0e-05
+✨ New best val acc: 0.8090 at epoch 16
+Epoch 17/20 - Train Loss: 0.1279, Acc: 0.9568 | Val Loss: 0.7741, Acc: 0.8096 | LR: 3.0e-05
+✨ New best val acc: 0.8096 at epoch 17
+Epoch 18/20 - Train Loss: 0.1044, Acc: 0.9651 | Val Loss: 0.7968, Acc: 0.8094 | LR: 1.4e-05
+Epoch 19/20 - Train Loss: 0.0912, Acc: 0.9701 | Val Loss: 0.8051, Acc: 0.8154 | LR: 4.3e-06
+✨ New best val acc: 0.8154 at epoch 19
+Epoch 20/20 - Train Loss: 0.0875, Acc: 0.9712 | Val Loss: 0.8057, Acc: 0.8118 | LR: 1.0e-06
+Training finished in 43.41 min. Best Val Acc: 0.8154
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.8165
+Stage4_Pos_sinusoidal: Best Val Acc = 0.8154, Final Test Acc = 0.8165
+*** New best for Stage 4: Stage4_Pos_sinusoidal (Val Acc: 0.8154) ***
+
+--- Running Config: Stage4_Pos_2d_learned ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 384,
+  "depth": 8,
+  "num_heads": 12,
+  "mlp_ratio": 4.0,
+  "batch_size": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "2d_learned",
+  "n_workers": 8,
+  "achieved_val_accuracy": 0.803
+}
+Data Augmentations: ['random_crop', 'horizontal_flip']
+Positional Embedding: 2d_learned
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using 2D learned positional embedding.
+Model created with 14222986 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=7030, Decay=21090, Total=28120
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.8372, Acc: 0.3216 | Val Loss: 1.6010, Acc: 0.4216 | LR: 6.0e-05
+✨ New best val acc: 0.4216 at epoch 1
+Epoch 2/20 - Train Loss: 1.4812, Acc: 0.4624 | Val Loss: 1.3633, Acc: 0.5026 | LR: 1.2e-04
+✨ New best val acc: 0.5026 at epoch 2
+Epoch 3/20 - Train Loss: 1.2541, Acc: 0.5488 | Val Loss: 1.1520, Acc: 0.5820 | LR: 1.8e-04
+✨ New best val acc: 0.5820 at epoch 3
+Epoch 4/20 - Train Loss: 1.1051, Acc: 0.6016 | Val Loss: 1.0107, Acc: 0.6394 | LR: 2.4e-04
+✨ New best val acc: 0.6394 at epoch 4
+Epoch 5/20 [Train]: 100%|█████████████████████████████████████████▉| 1405/1406 [02:08<00:00, 10.93it/s, acc=0.6719, loss=0.9832, lr=3.0e-04]/home2/siddharth.s/miniconda3/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Epoch 5/20 - Train Loss: 1.0105, Acc: 0.6388 | Val Loss: 0.9574, Acc: 0.6556 | LR: 3.0e-04
+✨ New best val acc: 0.6556 at epoch 5
+Epoch 6/20 - Train Loss: 0.9296, Acc: 0.6680 | Val Loss: 0.9969, Acc: 0.6522 | LR: 3.0e-04
+Epoch 7/20 - Train Loss: 0.8460, Acc: 0.6997 | Val Loss: 0.8446, Acc: 0.6970 | LR: 2.9e-04
+✨ New best val acc: 0.6970 at epoch 7
+Epoch 8/20 - Train Loss: 0.7691, Acc: 0.7286 | Val Loss: 0.7865, Acc: 0.7284 | LR: 2.7e-04
+✨ New best val acc: 0.7284 at epoch 8
+Epoch 9/20 - Train Loss: 0.6949, Acc: 0.7540 | Val Loss: 0.7440, Acc: 0.7366 | LR: 2.5e-04
+✨ New best val acc: 0.7366 at epoch 9
+Epoch 10/20 - Train Loss: 0.6220, Acc: 0.7794 | Val Loss: 0.7225, Acc: 0.7496 | LR: 2.3e-04
+✨ New best val acc: 0.7496 at epoch 10
+Epoch 11/20 - Train Loss: 0.5520, Acc: 0.8039 | Val Loss: 0.7081, Acc: 0.7532 | LR: 2.0e-04
+✨ New best val acc: 0.7532 at epoch 11
+Epoch 12/20 - Train Loss: 0.4786, Acc: 0.8323 | Val Loss: 0.6708, Acc: 0.7744 | LR: 1.7e-04
+✨ New best val acc: 0.7744 at epoch 12
+Epoch 13/20 - Train Loss: 0.4052, Acc: 0.8575 | Val Loss: 0.6842, Acc: 0.7904 | LR: 1.3e-04
+✨ New best val acc: 0.7904 at epoch 13
+Epoch 14/20 - Train Loss: 0.3363, Acc: 0.8823 | Val Loss: 0.6633, Acc: 0.7980 | LR: 1.0e-04
+✨ New best val acc: 0.7980 at epoch 14
+Epoch 15/20 - Train Loss: 0.2731, Acc: 0.9046 | Val Loss: 0.6963, Acc: 0.7954 | LR: 7.6e-05
+Epoch 16/20 - Train Loss: 0.2223, Acc: 0.9231 | Val Loss: 0.7188, Acc: 0.8014 | LR: 5.0e-05
+✨ New best val acc: 0.8014 at epoch 16
+Epoch 17/20 - Train Loss: 0.1822, Acc: 0.9383 | Val Loss: 0.7382, Acc: 0.8032 | LR: 3.0e-05
+✨ New best val acc: 0.8032 at epoch 17
+Epoch 18/20 - Train Loss: 0.1560, Acc: 0.9480 | Val Loss: 0.7445, Acc: 0.8026 | LR: 1.4e-05
+Epoch 19/20 - Train Loss: 0.1376, Acc: 0.9542 | Val Loss: 0.7602, Acc: 0.8062 | LR: 4.3e-06
+✨ New best val acc: 0.8062 at epoch 19
+Epoch 20/20 - Train Loss: 0.1293, Acc: 0.9576 | Val Loss: 0.7644, Acc: 0.8058 | LR: 1.0e-06
+Training finished in 43.55 min. Best Val Acc: 0.8062
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.8100
+Stage4_Pos_2d_learned: Best Val Acc = 0.8062, Final Test Acc = 0.8100
+*** New best for Stage 4: Stage4_Pos_2d_learned (Val Acc: 0.8062) ***
+
+--- Saving Best Results for Stage4_Pos (ID: Stage4_Pos_2d_learned, Val Acc: 0.8062) ---
+[Stage4_Pos] Saved best config to results_vit_tuned/best_config_Stage4_Pos_2d_learned.json
+[Stage4_Pos] Saved best model state_dict to results_vit_tuned/models/best_vit_Stage4_Pos_2d_learned.pth
+Saved plot to results_vit_tuned/plots/best_curves_Stage4_Pos_2d_learned.png
+*** New Overall Best CONFIG Found! (From Stage4_Pos_2d_learned, Val Acc: 0.8062) ***
+
+--- Testing Stage4_Pos_no_pos ---
+
+--- Running Config: Stage4_Pos_no_pos ---
+Parameters: {
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 384,
+  "depth": 8,
+  "num_heads": 12,
+  "mlp_ratio": 4.0,
+  "batch_size": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "no_pos",
+  "n_workers": 8,
+  "achieved_val_accuracy": 0.803
+}
+Data Augmentations: ['random_crop', 'horizontal_flip']
+Positional Embedding: no_pos
+Number of Epochs: 20
+Files already downloaded and verified
+Files already downloaded and verified
+Using no positional embedding.
+Model created with 14219530 params.
+Scheduler: Warmup Epochs=5, Total Epochs=20
+Scheduler Steps: Warmup=7030, Decay=21090, Total=28120
+Starting training for 20 epochs...
+Epoch 1/20 - Train Loss: 1.8296, Acc: 0.3233 | Val Loss: 1.5870, Acc: 0.4218 | LR: 6.0e-05
+✨ New best val acc: 0.4218 at epoch 1
+Epoch 2/20 - Train Loss: 1.4858, Acc: 0.4603 | Val Loss: 1.2882, Acc: 0.5300 | LR: 1.2e-04
+✨ New best val acc: 0.5300 at epoch 2
+Epoch 3/20 - Train Loss: 1.2825, Acc: 0.5373 | Val Loss: 1.2766, Acc: 0.5378 | LR: 1.8e-04
+✨ New best val acc: 0.5378 at epoch 3
+Epoch 4/20 - Train Loss: 1.1900, Acc: 0.5724 | Val Loss: 1.1600, Acc: 0.5882 | LR: 2.4e-04
+✨ New best val acc: 0.5882 at epoch 4
+Epoch 5/20 - Train Loss: 1.1458, Acc: 0.5873 | Val Loss: 1.1259, Acc: 0.5958 | LR: 3.0e-04
+✨ New best val acc: 0.5958 at epoch 5
+Epoch 6/20 - Train Loss: 1.1001, Acc: 0.6058 | Val Loss: 1.1765, Acc: 0.5872 | LR: 3.0e-04
+Epoch 7/20 - Train Loss: 1.0368, Acc: 0.6293 | Val Loss: 1.0334, Acc: 0.6322 | LR: 2.9e-04
+✨ New best val acc: 0.6322 at epoch 7
+Epoch 8/20 - Train Loss: 0.9698, Acc: 0.6524 | Val Loss: 1.0166, Acc: 0.6356 | LR: 2.7e-04
+✨ New best val acc: 0.6356 at epoch 8
+Epoch 9/20 - Train Loss: 0.9093, Acc: 0.6771 | Val Loss: 0.9729, Acc: 0.6530 | LR: 2.5e-04
+✨ New best val acc: 0.6530 at epoch 9
+Epoch 10/20 - Train Loss: 0.8375, Acc: 0.7013 | Val Loss: 0.9520, Acc: 0.6670 | LR: 2.3e-04
+✨ New best val acc: 0.6670 at epoch 10
+Epoch 11/20 - Train Loss: 0.7684, Acc: 0.7253 | Val Loss: 0.9358, Acc: 0.6710 | LR: 2.0e-04
+✨ New best val acc: 0.6710 at epoch 11
+Epoch 12/20 - Train Loss: 0.6910, Acc: 0.7535 | Val Loss: 0.9294, Acc: 0.6894 | LR: 1.7e-04
+✨ New best val acc: 0.6894 at epoch 12
+Epoch 13/20 - Train Loss: 0.6095, Acc: 0.7850 | Val Loss: 0.9313, Acc: 0.6934 | LR: 1.3e-04
+✨ New best val acc: 0.6934 at epoch 13
+Epoch 14/20 - Train Loss: 0.5359, Acc: 0.8087 | Val Loss: 0.8811, Acc: 0.7082 | LR: 1.0e-04
+✨ New best val acc: 0.7082 at epoch 14
+Epoch 15/20 - Train Loss: 0.4592, Acc: 0.8375 | Val Loss: 0.9244, Acc: 0.7196 | LR: 7.6e-05
+✨ New best val acc: 0.7196 at epoch 15
+Epoch 16/20 - Train Loss: 0.3904, Acc: 0.8633 | Val Loss: 0.9664, Acc: 0.7228 | LR: 5.0e-05
+✨ New best val acc: 0.7228 at epoch 16
+Epoch 17/20 - Train Loss: 0.3371, Acc: 0.8838 | Val Loss: 0.9771, Acc: 0.7272 | LR: 3.0e-05
+✨ New best val acc: 0.7272 at epoch 17
+Epoch 18/20 - Train Loss: 0.2970, Acc: 0.8986 | Val Loss: 1.0005, Acc: 0.7330 | LR: 1.4e-05
+✨ New best val acc: 0.7330 at epoch 18
+Epoch 19/20 - Train Loss: 0.2755, Acc: 0.9063 | Val Loss: 1.0140, Acc: 0.7328 | LR: 4.3e-06
+Epoch 20/20 - Train Loss: 0.2639, Acc: 0.9117 | Val Loss: 1.0194, Acc: 0.7326 | LR: 1.0e-06
+Training finished in 43.50 min. Best Val Acc: 0.7330
+Loading best val weights for final test eval...
+Final Test Accuracy (best val wts): 0.7337
+Stage4_Pos_no_pos: Best Val Acc = 0.7330, Final Test Acc = 0.7337

@@ -1,0 +1,110 @@
+=== Starting Diff-ViT Sequential Tuning (2025-04-20 23:05:43) ===
+Device: cuda
+Results Dir: results_diff_vit_tuned
+Epochs per Tuning Run: 20
+
+=============== Stage 1: Patch Size Tuning (20 Epochs) ===============
+Data Augmentation: None
+S1_Patch_4: Best Val Acc = 0.7072, Final Test Acc = 0.6993
+S1_Patch_8: Best Val Acc = 0.6236, Final Test Acc = 0.6092
+
+--- Stage 1 Result (Duration: 14.20 min): Best Patch Size = 4 (Val Acc: 0.7072) ---
+
+--- Saving Best Results for Stage1_Patch (ID: S1_Patch_4, Val Acc: 0.7072) ---
+[Stage1_Patch] Saved best config to results_diff_vit_tuned/best_config_diff_vit_S1_Patch_4.json
+[Stage1_Patch] Saved best model state_dict to results_diff_vit_tuned/models/best_diff_vit_S1_Patch_4.pth
+[Stage1_Patch] Saved best training plots to results_diff_vit_tuned/plots/best_curves_diff_vit_S1_Patch_4.png
+
+=============== Stage 2: Model Parameter Tuning (20 Epochs) ===============
+Using Best Patch Size: 4
+Using Augmentations: ['random_crop', 'horizontal_flip']
+S2_Param_baseline_m: Best Val Acc = 0.7648, Final Test Acc = 0.7717
+S2_Param_mlp_ratio_2: Best Val Acc = 0.7572, Final Test Acc = 0.7519
+S2_Param_deeper: Best Val Acc = 0.7696, Final Test Acc = 0.7623
+S2_Param_wider: Best Val Acc = 0.7900, Final Test Acc = 0.7900
+S2_Param_smaller: Best Val Acc = 0.7506, Final Test Acc = 0.7428
+
+--- Stage 2 Result (Duration: 216.85 min): Best Model Config = 'wider' (Val Acc: 0.7900) ---
+Best Stage 2 Config Params:
+{
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 384,
+  "depth": 8,
+  "num_heads": 12,
+  "mlp_ratio": 4.0,
+  "batch_size": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "1d_learned",
+  "n_workers": 20
+}
+
+--- Saving Best Results for Stage2_Model (ID: S2_Param_wider, Val Acc: 0.7900) ---
+[Stage2_Model] Saved best config to results_diff_vit_tuned/best_config_diff_vit_S2_Param_wider.json
+[Stage2_Model] Saved best model state_dict to results_diff_vit_tuned/models/best_diff_vit_S2_Param_wider.pth
+[Stage2_Model] Saved best training plots to results_diff_vit_tuned/plots/best_curves_diff_vit_S2_Param_wider.png
+
+=============== Stage 3: Data Augmentation Tuning (20 Epochs) ===============
+Using Best Model Config: 'wider' (Patch: 4)
+S3_Aug_None: Best Val Acc = 0.7208, Final Test Acc = 0.7223
+S3_Aug_Mild: Best Val Acc = 0.7920, Final Test Acc = 0.7906
+
+--- Stage 3 Result (Duration: 101.92 min): Best Aug Strategy = 'Mild' (Val Acc: 0.7920) ---
+
+--- Saving Best Results for Stage3_Aug (ID: S3_Aug_Mild, Val Acc: 0.7920) ---
+[Stage3_Aug] Saved best config to results_diff_vit_tuned/best_config_diff_vit_S3_Aug_Mild.json
+[Stage3_Aug] Saved best model state_dict to results_diff_vit_tuned/models/best_diff_vit_S3_Aug_Mild.pth
+[Stage3_Aug] Saved best training plots to results_diff_vit_tuned/plots/best_curves_diff_vit_S3_Aug_Mild.png
+
+=============== Stage 4: Positional Embedding Tuning (20 Epochs) ===============
+Using Best Model Config: 'wider' (Patch: 4)
+Using Best Augmentation: 'Mild'
+S4_PE_1d_learned: Best Val Acc = 0.8000, Final Test Acc = 0.7934
+S4_PE_sinusoidal: Best Val Acc = 0.8100, Final Test Acc = 0.8084
+S4_PE_no_pos: Best Val Acc = 0.7250, Final Test Acc = 0.7215
+
+--- Stage 4 Result (Duration: 202.24 min): Best Pos Embed Type = 'sinusoidal' (Val Acc: 0.8100) ---
+
+--- Saving Best Results for Stage4_Pos (ID: S4_PE_sinusoidal, Val Acc: 0.8100) ---
+[Stage4_Pos] Saved best config to results_diff_vit_tuned/best_config_diff_vit_S4_PE_sinusoidal.json
+[Stage4_Pos] Saved best model state_dict to results_diff_vit_tuned/models/best_diff_vit_S4_PE_sinusoidal.pth
+[Stage4_Pos] Saved best training plots to results_diff_vit_tuned/plots/best_curves_diff_vit_S4_PE_sinusoidal.png
+
+=============== Final Overall Diff-ViT Results & Saving ===============
+Overall Best Diff-ViT Val Acc: 0.8100 (Achieved in Stage 4 (Pos Embed), Run: S4_PE_sinusoidal)
+Overall Best Diff-ViT Test Acc (for that run): 0.8084
+Final Overall Best Diff-ViT Configuration:
+{
+  "img_size": 32,
+  "patch_size": 4,
+  "embed_dim": 384,
+  "depth": 8,
+  "num_heads": 12,
+  "mlp_ratio": 4.0,
+  "batch_size": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.05,
+  "drop_rate": 0.1,
+  "attn_drop_rate": 0.1,
+  "warmup_epochs": 5,
+  "pos_embed_type": "sinusoidal",
+  "n_workers": 20,
+  "data_augmentation_names": [
+    "random_crop",
+    "horizontal_flip"
+  ],
+  "overall_best_val_accuracy": 0.81,
+  "overall_best_test_accuracy": 0.8084,
+  "overall_best_stage_achieved": "Stage 4 (Pos Embed)",
+  "overall_best_run_id": "S4_PE_sinusoidal"
+}
+Saved final overall best config to results_diff_vit_tuned/best_config_diff_vit_overall_tuned.json
+Saved final overall best model state_dict to results_diff_vit_tuned/models/best_diff_vit_overall_tuned.pth
+Saved overall best training plots to results_diff_vit_tuned/plots/best_train_curves_diff_vit_overall_tuned.png
+Final Test Accuracy of saved overall best Diff-ViT model: 0.8084
+
+Total Tuning Duration: 535.49 minutes (32129.44 seconds)

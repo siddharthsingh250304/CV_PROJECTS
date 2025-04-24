@@ -1,0 +1,17 @@
+{
+    "img_size": 32,
+    "patch_size": 4,
+    "embed_dim": 384,
+    "depth": 8,
+    "num_heads": 12,
+    "mlp_ratio": 4.0,
+    "batch_size": 64,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.05,
+    "drop_rate": 0.1,
+    "attn_drop_rate": 0.1,
+    "warmup_epochs": 5,
+    "pos_embed_type": "1d_learned",
+    "n_workers": 20,
+    "achieved_val_accuracy": 0.79
+}

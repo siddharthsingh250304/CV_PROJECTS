@@ -1,0 +1,90 @@
+threshold = 0.05
+ Precision = 0.1041 | Recall = 0.0106
+ mean AP = 0.0000
+threshold = 0.15
+ Precision = 0.0495 | Recall = 0.0051
+ mean AP = 0.0000
+threshold = 0.25
+ Precision = 0.0206 | Recall = 0.0022
+ mean AP = 0.0000
+threshold = 0.35
+ Precision = 0.0109 | Recall = 0.0011
+ mean AP = 0.0000
+threshold = 0.44999999999999996
+ Precision = 0.0066 | Recall = 0.0006
+ mean AP = 0.0000
+threshold = 0.5499999999999999
+ Precision = 0.0006 | Recall = 0.0001
+ mean AP = 0.0000
+threshold = 0.65
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.75
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.85
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.95
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.05
+ Precision = 0.1125 | Recall = 0.0115
+ mean AP = 0.0000
+threshold = 0.15
+ Precision = 0.0517 | Recall = 0.0053
+ mean AP = 0.0000
+threshold = 0.25
+ Precision = 0.0194 | Recall = 0.0023
+ mean AP = 0.0000
+threshold = 0.35
+ Precision = 0.0110 | Recall = 0.0013
+ mean AP = 0.0000
+threshold = 0.44999999999999996
+ Precision = 0.0060 | Recall = 0.0007
+ mean AP = 0.0000
+threshold = 0.5499999999999999
+ Precision = 0.0017 | Recall = 0.0002
+ mean AP = 0.0000
+threshold = 0.65
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.75
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.85
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.95
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.05
+ Precision = 0.1125 | Recall = 0.0115
+ mean AP = 0.0000
+threshold = 0.15
+ Precision = 0.0517 | Recall = 0.0053
+ mean AP = 0.0000
+threshold = 0.25
+ Precision = 0.0194 | Recall = 0.0023
+ mean AP = 0.0000
+threshold = 0.35
+ Precision = 0.0110 | Recall = 0.0013
+ mean AP = 0.0000
+threshold = 0.44999999999999996
+ Precision = 0.0060 | Recall = 0.0007
+ mean AP = 0.0000
+threshold = 0.5499999999999999
+ Precision = 0.0017 | Recall = 0.0002
+ mean AP = 0.0000
+threshold = 0.65
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.75
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.85
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
+threshold = 0.95
+ Precision = 0.0000 | Recall = 0.0000
+ mean AP = 0.0000
