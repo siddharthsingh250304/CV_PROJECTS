@@ -112,10 +112,7 @@ This section explores **Vision Transformers (ViT)** and their extension **Differ
 
 ## **5. Conclusion**
 
-This repository offers a comprehensive set of experiments that delve into several critical deep learning tasks, including **image classification**, **object detection**, **semantic segmentation**, and **zero-shot learning**. Each section highlights the application of state-of-the-art models, including **ResNet**, **Faster R-CNN**, **Vision Transformer (ViT)**, and **CLIP**.
 
-Through a series of well-documented experiments, performance evaluations, and visualizations such as **attention maps** and **saliency maps**, this project provides valuable insights into model architectures and their decision-making processes. The work presents novel techniques for enhancing existing models, exploring their interpretability, and pushing the boundaries of AI in computer vision and NLP.
-
-This repository represents the cumulative efforts of the work done in the **Computer Vision** course and serves as an invaluable resource for understanding and applying state-of-the-art methods in this domain.
+This repository represents the cumulative efforts of the work done by me for the **Computer Vision** course.
 
 ---
